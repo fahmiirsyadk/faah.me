@@ -21,7 +21,7 @@ RUN node_modules/.bin/esy build
 FROM debian:stable-slim as run
 
 RUN apt-get update
-RUN apt-get install -y libev4 libpq5 libssl
+RUN apt-get install -y libev4 libpq5 libssl-dev
 
 COPY --from=build build/_esy/default/build/default/app.exe /bin/app
 
